@@ -1,8 +1,29 @@
-import WebsiteImg from '../assets/ecommerce.png';
-import WebsiteImg1 from '../assets/foodecommerce.png'
-import Websiteblog from '../assets/websiteblog.png'
+import WebsiteImg1 from '../assets/ecommerce.png';
+import WebsiteImg2 from '../assets/foodecommerce.png'
+import WebsiteImg3 from '../assets/websiteblog.png'
 
 export default function Projects() {
+
+    const config = {
+        projects: [
+            {
+                image: WebsiteImg1,
+                description: 'A Ecommerce Website.Built with Mern Stack',
+                link: 'https://github.com/Rajesh4027'
+            },
+            {
+                image: WebsiteImg2,
+                description: 'Food Ecommerce Website like Swiggy,Build with Angular',
+                link: 'https://github.com/Rajesh4027'
+            },
+            {
+                image: WebsiteImg3,
+                description: 'Basic Blog website. Buil wit next Js and mongodb',
+                link: 'https://github.com/Rajesh4027'
+            },
+        ]
+    }
+
     return <section className="flex flex-col py-20 px-5 justify-center bg-secondary  text-white" id='projects'>
         <div className=" text-4xl mb-3 w-full">
             <div className="flex flex-col px-10">
@@ -11,26 +32,22 @@ export default function Projects() {
             </div>
         </div>
         <div className='w-full'>
-        
+
             <div className="flex flex-col md:flex-row px-10 gap-5">
-                <div className='relative'>
-                    <img className='h-[250px] w-[500px] rounded-2xl' src={WebsiteImg} />
-                    <div className='project-desc'>
-                        <p className='py-5 text-center'>A Ecommerce Website.Built with Mern Stack</p>
+                {config.projects.map((project) => (
+
+                    <div className='relative'>
+                        <img className='h-[250px] w-[500px] rounded-2xl' src={project.image} />
+                        <div className='project-desc'>
+                            <p className='py-5 px-4 text-center'>{project.description}</p>
+                        <div className='flex justify-center mt-4'>
+                            <a className='btn' target='_blank' href={project.link}>View Project</a>
+                        </div>
+                        </div>
                     </div>
-                </div>
-                <div className='relative'>
-                    <img className='h-[250px] w-[500px] rounded-2xl' src={WebsiteImg1} />
-                    <div className='project-desc'>
-                        <p className='py-5 text-center'>Food Ecommerce Website like Swiggy,Build with Angular</p>
-                    </div>
-                </div>
-                <div className='relative'>
-                    <img className='h-[250px] w-[500px] rounded-2xl' src={Websiteblog} />
-                    <div className='project-desc'>
-                        <p className='py-5 text-center'>Basic Blog website. Buil wit next Js and mongodb</p>
-                    </div>
-                </div>
+                ))}
+
+
 
             </div>
         </div>
