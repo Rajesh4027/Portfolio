@@ -2,7 +2,7 @@ import HeroImg from '../assets/hero.svg'
 import { AiOutlineTwitter,AiOutlineFacebook,AiOutlineLinkedin } from "react-icons/ai";
 
 export default function Hero() {
-  return <section className='flex flex-col md:flex-row px-5 py-32 bg-secondary justify-center bg-radius '>
+  return <section className='flex flex-col md:flex-row px-5 py-32 bg-secondary justify-center' >
     <div className='md:w-1/2 flex flex-col'>
     <h1 className=' text-white text-4xl'>Hi,<br />I'm Vetri 
     <p className='text-2xl'>I'm a Full-Stack Developer</p></h1>

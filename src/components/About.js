@@ -1,7 +1,7 @@
 import AboutImg from '../assets/about.svg'
 
 export default function About() {
-  return <section className='flex flex-col sm:flex-row bg-radius bg-violet-500'>
+  return <section className='flex flex-col sm:flex-row  bg-violet-500 ' id='about'>
     <div className='flex md:w-1/2 px-2 py-5 '>
         <img src={AboutImg}  />
     </div>

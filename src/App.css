@@ -28,5 +28,12 @@ header ul li{
 }
 
 .project-desc{
-  @apply absolute left-0 right-0 bottom-0 top-0 duration-500 opacity-0 hover:opacity-100 bg-violet-700
+  @apply absolute left-0 right-0 bottom-0 top-0 duration-500 rounded-2xl opacity-0 hover:opacity-100 bg-violet-700
+}
+.btn{
+  @apply bg-violet-700  text-white px-5 py-2 rounded-xl hover:bg-violet-950 
+}
+
+html{
+  scroll-behavior: smooth;
 }
