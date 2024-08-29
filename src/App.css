@@ -16,18 +16,21 @@ header ul li{
 .bg-secondary{
   @apply bg-violet-700;
 }
+.bg-nav{
+  @apply bg-white drop-shadow-lg;
+}
 .bg-radius{
   @apply rounded-xl m-3
 }
 
 .mobile-nav{
-  @apply fixed top-14  right-7 duration-300 bg-violet-900  w-1/2 h-2/6;
+  @apply fixed top-14  right-0 bg-white  w-full h-full ;
 }
 .mobile-nav li {
-  @apply w-full text-center hover:bg-violet-950 h-full content-center;
+  @apply w-full text-center hover:bg-blue-700  hover:text-white bg-slate-300  h-full content-center;
 }
 .mobile-nav li a {
-  @apply px-11 py-3
+  @apply px-11 py-3 
 }
 .project-desc{
   @apply absolute  left-0 right-0 bottom-0 top-0 duration-500 rounded-2xl opacity-0 hover:opacity-100 bg-violet-900
@@ -37,5 +40,6 @@ header ul li{
 }
 
 .nav-style{
-  @apply  rounded-sm hover:bg-violet-900 px-4 py-3 duration-300
+  @apply  rounded-sm hover:bg-violet-900 hover:text-white px-2  duration-300
 }
+
