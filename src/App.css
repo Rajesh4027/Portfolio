@@ -30,7 +30,7 @@ header ul li{
   @apply w-full text-center hover:bg-blue-700  hover:text-white bg-slate-300  h-full content-center;
 }
 .mobile-nav li a {
-  @apply px-11 py-3 
+  @apply px-56 py-7 
 }
 .project-desc{
   @apply absolute  left-0 right-0 bottom-0 top-0 duration-500 rounded-2xl opacity-0 hover:opacity-100 bg-violet-900
@@ -40,6 +40,6 @@ header ul li{
 }
 
 .nav-style{
-  @apply  rounded-sm hover:bg-violet-900 hover:text-white px-2  duration-300
+  @apply  rounded-sm hover:bg-violet-900 hover:text-white px-3 duration-300 py-2
 }
 

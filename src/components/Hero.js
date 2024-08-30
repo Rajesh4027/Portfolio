@@ -1,3 +1,11 @@
+import Header from './Header';
+import About from './About';
+import Projects from './Projects';
+import Resume from './Resume';
+import Contact from './Contact';
+import Footer from './Footer';
+
+
 import HeroImg from '../assets/hero.svg'
 import { AiOutlineTwitter,AiOutlineFacebook,AiOutlineLinkedin } from "react-icons/ai";
 
@@ -13,7 +21,9 @@ export default function Hero() {
     }
   }
 
-  return <section className='flex flex-col md:flex-row px-5 py-32 bg-secondary justify-center' >
+  return <div>
+    <div><Header /></div>
+    <section className='flex flex-col md:flex-row px-5 py-32 bg-secondary justify-center' >
     <div className='md:w-1/2 flex flex-col'>
     <h1 className=' text-white text-4xl'>Hi,<br/>{config.name}
     <p className='text-2xl'>{config.subtile}</p></h1>
@@ -25,6 +35,16 @@ export default function Hero() {
     </div>
     <img className='md:w-1/3 ' src={HeroImg} />
  
+    
   </section>
+    <About />
+    <Projects />
+    <Resume />
+    <Contact />
+    <Footer />
+  </div>
+  
+  
+
   
 }

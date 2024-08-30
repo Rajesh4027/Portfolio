@@ -24,8 +24,8 @@ export default function Header() {
         </ul>
       </nav>
       <div className='hidden md:block '>
-        <button className='px-3 rounded-md border-2 border-blue-800 py-1 mr-2 '>Login</button>
-        <button className='px-3 py-1 rounded-sm border-2 border-blue-800 bg-blue-800 text-white hover:bg-blue-900 '>Register</button>
+        <button className='px-3 rounded-md border-2 hover:border-blue-800  py-1 mr-2 hover:text-blue-950 hover:font-medium '>Login</button>
+        <button className='px-3 py-1 rounded-sm border-2 border-blue-800 bg-blue-800 text-white hover:bg-blue-950 '>Register</button>
       </div>
 
       {togglemenu && <nav className='block md:hidden '>
@@ -36,7 +36,7 @@ export default function Header() {
           <li><a href="#resume">Resume</a></li>
           <li><a href="#contact">Contact</a></li>
           
-          <div className='flex flex-col drop-shadow-lg bg-slate-200 py-2'>
+          <div className='flex flex-col drop-shadow-lg  bg-slate-200 py-2'>
             <button className='py-2 border-2 mx-3  border-blue-700 bg-white rounded-md hover:bg-blue-800'>Login</button>
             <button className='py-2 bg-blue-900 text-white mt-2 mx-3'>Register</button>
           </div>

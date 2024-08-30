@@ -1,22 +1,32 @@
 import './App.css';
-import Header from './components/Header';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+
 import Hero from './components/Hero';
-import About from './components/About';
-import Projects from './components/Projects';
-import Resume from './components/Resume';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+
+import Login from './Email Auth/Login'
+import Register from './Email Auth/Register'
+import Home from './Email Auth/Home';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Hero />
-      <About />
-      <Projects />
-      <Resume />
-      <Contact />
-      <Footer />
+      
+      
+
+
+      
+
+      <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Hero />}></Route>
+            <Route path='/login' element={<Login />}></Route>
+            <Route path='/Register' element={<Register />}></Route>
+          </Routes>
+      </BrowserRouter>
+      
+      
+
+      
     </div>
   );
 }
