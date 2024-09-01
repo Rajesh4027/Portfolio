@@ -43,3 +43,21 @@ header ul li{
   @apply  rounded-sm hover:bg-violet-900 hover:text-white px-3 duration-300 py-2
 }
 
+
+.reg-btn{
+  @apply px-3 py-1 rounded-sm border-2 border-blue-800 bg-blue-800 text-white hover:bg-blue-950
+}
+
+/* registeration */
+
+.reg-bar{
+  @apply grid grid-cols-4 gap-2 mt-2 
+}
+
+.input-bar{
+  @apply col-span-2 
+
+}
+.reg-bar div input,.text-bar textarea {
+  @apply w-full p-2 rounded-md border-2 hover:border-blue-600 outline-none 
+}

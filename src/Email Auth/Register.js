@@ -1,36 +1,88 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
-  return (
-    <div class="h-screen w-screen flex justify-center items-center ">
-    <div className='w-full m-12 p-12 rounded-md bg-black text-white'>
-    <form class="space-y-6" >
-        <h5 class="text-xl font-medium text-gray-900 dark:text-white">Register</h5>
-        <div>
-            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">User Name </label>
-            <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="sample@gmail.com"  />
-        </div>
-        <div>
-            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-            <input type="password"  placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"  />
-        </div>
-        <div class="flex items-start">
-            <div class="flex items-start">
-                <div class="flex items-center h-5">
-                    <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"  />
-                </div>
-                <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
+
+    const[id,idchange] = useState("");
+    const[name,namechange] = useState("");
+    const[password,passwordchange] = useState("");
+    const[email,emailchange] = useState("");
+    const[phone,phonechange] = useState("");
+    const[country,countrychange] = useState("");
+    const[address,addresschange] = useState("");
+    const[gender,genderchange] = useState("");
+
+    const navigate = useNavigate();
+
+    const handlesubmit = (e) =>{
+        e.preventDefault();
+        let regObj = {id,name,password,email,phone,country,address,gender}
+        
+        fetch("http://localhost:8000/user ",{
+            method:"POST",
+            headers:{'content-type':'application/json'},
+            body:JSON.stringify(regObj)
+
+        }).then((res)=>{
+            alert('Registered Successfully')
+            navigate('/login')
+            
+        }).catch((err)=>{
+            alert('Failed:'+err.message)
+        })
+    }
+    const handlecheck = (e) =>{
+        navigate('/')
+    }
+
+    return (
+        <div class="h-screen w-screen flex justify-center items-center bg-slate-100">
+            <div className='w-full  p-10 rounded-lg xl:max-w-md dark:bg-gray-500 '>
+                <form onSubmit={handlesubmit}>
+                    {/* card header */}
+                    <h1 className='text-2xl text-white'>User Registeration</h1>
+                    {/* card body */}
+
+                    <div className='reg-bar'>
+                        <div className='input-bar'>
+                            <input type="text" value={id} onChange={e=>idchange(e.target.value)} placeholder='Username' />
+                        </div>
+                        <div className='input-bar'>
+                            <input type="password" value={password} onChange={e=>passwordchange(e.target.value)} placeholder='Password' />
+                        </div>
+                        <div className='input-bar'>
+                            <input type="text" value={name} onChange={e=>namechange(e.target.value)} placeholder='Fullname' />
+                        </div>
+                        <div className='input-bar'>
+                            <input type="email" value={email} onChange={e=>emailchange(e.target.value)} placeholder='Email' />
+                        </div>
+                        <div className='input-bar'>
+                            <input type="number" value={phone} onChange={e=>phonechange(e.target.value)} placeholder='Phone' />
+                        </div>
+
+                        <select className='input-bar outline-none rounded-md' value={country} onChange={e=>countrychange(e.target.value)}>
+                            <option value="Select">Select</option>
+                            <option value="india">India</option>
+                            <option value="usa">USA</option>
+                            <option value="singapore">Singapore</option>
+                        </select>
+                        <div className='text-bar col-span-4'>
+                            <textarea type="text" value={address} onChange={e=>addresschange(e.target.value)} placeholder='Address' />
+                        </div>
+                        <div className='flex flex-row gap-1'>
+                            <label className='font-bold mr-2'>Gender</label>
+                            <input type="radio" checked={gender==='male'} onChange={e=>genderchange(e.target.value)} name='gender' value="male" />
+                            <label >Male</label>
+                            <input type="radio" checked={gender==='female'} onChange={e=>genderchange(e.target.value)} name='gender' value="female" />
+                            <label >Female</label>
+                        </div>
+                    </div>
+                        <button type='submit' className='mt-3 reg-btn'>Register</button>
+                        <button onClick={handlecheck} className='px-3 py-1 ml-2 rounded-sm border-2 border-red-600 bg-red-600 text-white hover:bg-red-700'>Back</button>
+                </form>
             </div>
-            <a href="#" class="ms-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
         </div>
-        <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button>
-        <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-            Not registered? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
-        </div>
-    </form>
-    </div>
-</div>
-  )
+    )
 }
 
 export default Register
