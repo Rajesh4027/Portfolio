@@ -1,34 +1,5 @@
 {
   "user": [
-    {
-      "id": "ads",
-      "name": "amf a",
-      "password": "aslmd f",
-      "email": "famls@gmail.com",
-      "phone": "",
-      "country": "",
-      "address": "",
-      "gender": ""
-    },
-    {
-      "id": "",
-      "name": "",
-      "password": "",
-      "email": "",
-      "phone": "",
-      "country": "",
-      "address": "",
-      "gender": ""
-    },
-    {
-      "id": "askdfm",
-      "name": "km",
-      "password": "lkmm",
-      "email": "mm@gmail.com",
-      "phone": "",
-      "country": "",
-      "address": "mk",
-      "gender": ""
-    }
+    
   ]
 }
