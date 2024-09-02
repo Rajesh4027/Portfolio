@@ -1,5 +1,64 @@
 {
   "user": [
-    
+    {
+      "id": "Hello",
+      "name": "hellowold",
+      "password": "hello",
+      "email": "hello@gmail.com",
+      "phone": "1231231",
+      "country": "india",
+      "address": "asdkf",
+      "gender": "male"
+    },
+    {
+      "id": "admin",
+      "name": "admin",
+      "password": "ad",
+      "email": "admin@gmail.com",
+      "phone": "1223",
+      "country": "india",
+      "address": "asdf",
+      "gender": "female"
+    },
+    {
+      "id": "amma",
+      "name": "amma",
+      "password": "amma",
+      "email": "amma@gmail.com",
+      "phone": "",
+      "country": "",
+      "address": "",
+      "gender": ""
+    },
+    {
+      "id": "siri",
+      "name": "siri",
+      "password": "siri",
+      "email": "siri@gmail.com",
+      "phone": "3324234",
+      "country": "india",
+      "address": "asdfnkn",
+      "gender": "male"
+    },
+    {
+      "id": "sir",
+      "name": "sir",
+      "password": "sir",
+      "email": "sir@gmail.com",
+      "phone": "32",
+      "country": "",
+      "address": "",
+      "gender": ""
+    },
+    {
+      "id": "hello",
+      "name": "klj",
+      "password": "hello",
+      "email": "l@gmail.com",
+      "phone": "32",
+      "country": "",
+      "address": "",
+      "gender": ""
+    }
   ]
 }

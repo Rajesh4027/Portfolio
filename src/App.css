@@ -55,9 +55,18 @@ header ul li{
 }
 
 .input-bar{
-  @apply col-span-2 
+  @apply col-span-4 sm:col-span-2 
 
 }
 .reg-bar div input,.text-bar textarea {
   @apply w-full p-2 rounded-md border-2 hover:border-blue-600 outline-none 
+}
+
+.log-bar{
+  @apply grid grid-cols-1 gap-2 mt-2 
+}
+.log-bar div input{
+  @apply w-full p-2 rounded-md border-2 hover:border-blue-600 outline-none 
+
+
 }

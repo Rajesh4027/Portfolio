@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom"
+
 
 function Register() {
+
 
     const [id, idchange] = useState("");
     const [name, namechange] = useState("");
@@ -14,6 +17,8 @@ function Register() {
 
     const navigate = useNavigate();
 
+
+
     let IsValidate = () => {
         let isproceed = true;
         let errormsg = 'Please enter the value in '
@@ -25,24 +30,29 @@ function Register() {
             isproceed = false;
             errormsg += '[Password] '
         }
+        if (name === null || name === '') {
+            isproceed = false;
+            errormsg += '[Fullname] '
+        }
         if (email === null || email === '') {
             isproceed = false;
             errormsg += '[Email] '
         }
         if (!isproceed) {
             alert(errormsg)
-        }else{
-            if(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)){
-
+        } else {
+            if (/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
 
             }
-            else{
-                isproceed =  false;
+            else {
+                isproceed = false;
                 alert("Please enter the valid email")
             }
         }
         return isproceed;
     }
+
+
 
     const handlesubmit = (e) => {
         e.preventDefault();
@@ -56,7 +66,7 @@ function Register() {
                 body: JSON.stringify(regObj)
 
             }).then((res) => {
-                alert('Registered Successfully')
+                alert("Registered successfully")
                 navigate('/login')
 
             }).catch((err) => {
@@ -64,14 +74,11 @@ function Register() {
             })
         }
     }
-    const handlecheck = (e) => {
-        navigate('/')
-
-    }
 
     return (
         <div class="h-screen w-screen flex justify-center items-center bg-slate-100">
-            <div className='w-full  p-10 rounded-lg xl:max-w-md dark:bg-gray-500 '>
+            <div className='w-full  p-10 rounded-lg max-w-5xl mx-2 dark:bg-gray-500 '>
+
                 <form onSubmit={handlesubmit}>
                     {/* card header */}
                     <h1 className='text-2xl text-white'>User Registeration</h1>
@@ -94,7 +101,7 @@ function Register() {
                             <input type="number" value={phone} onChange={e => phonechange(e.target.value)} placeholder='Phone' />
                         </div>
 
-                        <select className='input-bar outline-none rounded-md' value={country} onChange={e => countrychange(e.target.value)}>
+                        <select className='input-bar outline-none rounded-md py-2' value={country} onChange={e => countrychange(e.target.value)}>
                             <option value="Select">Select</option>
                             <option value="india">India</option>
                             <option value="usa">USA</option>
@@ -103,7 +110,7 @@ function Register() {
                         <div className='text-bar col-span-4'>
                             <textarea type="text" value={address} onChange={e => addresschange(e.target.value)} placeholder='Address' />
                         </div>
-                        <div className='flex flex-row gap-1'>
+                        <div className='flex flex-row gap-1 '>
                             <label className='font-bold mr-2'>Gender</label>
                             <input type="radio" checked={gender === 'male'} onChange={e => genderchange(e.target.value)} name='gender' value="male" />
                             <label >Male</label>
@@ -111,9 +118,16 @@ function Register() {
                             <label >Female</label>
                         </div>
                     </div>
-                    <button type='submit' className='mt-3 reg-btn'>Register</button>
-                    <button onClick={handlecheck} className='px-3 py-1 ml-2 rounded-sm border-2 border-red-600 bg-red-600 text-white hover:bg-red-700'>Back</button>
+
+                    <button className='mt-3 reg-btn'>Register</button>
+
+                    <Link to={'/'} className='px-3 py-1 ml-2 rounded-sm border-2 border-red-600 bg-red-600 text-white hover:bg-red-700'>Back</Link>
+
                 </form>
+
+                
+                
+
             </div>
         </div>
     )
